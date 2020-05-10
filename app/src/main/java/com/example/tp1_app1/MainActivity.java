@@ -2,6 +2,7 @@ package com.example.tp1_app1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -41,9 +42,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         // appeler lors du clic sur bouton OK et sur le bouton Edit Text
         String s =refEdtPseudo.getText().toString();
+        Bundle b = new Bundle();
+        b.putString("pseudo",s);
         switch (v.getId()){
             case R.id.btnOK :
-                                alerter("Pseudo = " + s);
+                                alerter("Pseudo = " + b.getString("pseudo"));
+                                Intent versSecondAct = new Intent(this,SecondActivity.class);
+                                versSecondAct.putExtras(b);
+                                startActivity(versSecondAct);
                                 break;
             case R.id.etdPseudo :
                                 alerter("Click par écouteur générique Edit Text");
