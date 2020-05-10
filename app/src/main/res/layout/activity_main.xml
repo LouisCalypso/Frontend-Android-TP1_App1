@@ -7,27 +7,14 @@
     android:background="#FFB300"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:height="70dp"
-        android:background="#000000"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/app_name"
-        android:textColor="#FFFFFF"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button"
+        android:onClick="foo"
+        android:id="@+id/btnOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/labelBtnOK"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/etdPseudo" />
 
     <TextView
         android:id="@+id/textView"
@@ -36,13 +23,14 @@
         android:text="@string/labelnom2pints"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etdPseudo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:autofillHints="@string/labelNom"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
@@ -51,8 +39,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:autofillHints="@string/labelNom"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
